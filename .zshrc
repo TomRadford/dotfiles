@@ -1,8 +1,9 @@
 # Source zsh plugins
-source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $HOME/.config/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# source $HOME/.config/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+ZSH_THEME="powerlevel10k/powerlevel10k"
 # Aliases for common dirs
 alias home="cd ~"
 
@@ -23,7 +24,6 @@ alias push="git push"
 alias g="lazygit"
 
 
-eval "$(starship init zsh)"
 
 alias ssh="TERM=xterm-256color ssh"
 
@@ -73,3 +73,4 @@ export NNN_OPTS="AdHoU"
 export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 export MANPAGER="$(which nvim) +Man!"
 export XDG_CONFIG_HOME="$HOME/.config"
+export S2S_PATH="$HOME/dev/stock2shop"

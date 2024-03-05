@@ -27,6 +27,7 @@ echo "Installing Brew Formulae..."
 brew install wget
 # JQ is a lightweight and flexible command-line JSON processor
 brew install jq 
+# ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern
 brew install ripgrep
 # brew install bear
 brew install mas
@@ -44,23 +45,26 @@ brew install borders
 # brew install texlab
 
 ### Terminal
-brew install neovim
+# brew install neovim
 # todo: add my zsh setup here (oh-my-zsh) or maybe keep this?
-brew install starship
-brew install zsh-autosuggestions
-brew install zsh-fast-syntax-highlighting
+# brew install starship
+# brew install zsh-autosuggestions
+# brew install zsh-fast-syntax-highlighting
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 ### Nice to have
 # brew install lulu
 brew install btop
-brew install svim
+# brew install svim
 brew install lazygit
+# brew install yabai
 # brew install wireguard-go
 # brew install dooit
 
 ## Custom HEAD only forks (personal yabai and nnn forks)
 brew install fyabai --head
-brew install fnnn --head
+# brew install fnnn --head
 
 ## Casks
 echo "Installing Brew Casks..."
@@ -73,7 +77,8 @@ brew install --cask alacritty
 # brew install --cask inkscape
 # brew install --cask libreoffice
 # brew install --cask zoom
-brew install --cask meetingbar
+# brew install --cask meetingbar
+brew install --cask iterm2
 brew install --cask skim
 brew install --cask vlc
 
@@ -95,7 +100,7 @@ brew install --cask font-jetbrains-mono
 brew install --cask font-fira-code
 
 # Mac App Store Apps
-echo "Installing Mac App Store Apps..."
+# echo "Installing Mac App Store Apps..."
 # mas install 1451685025 #Wireguard
 # mas install 497799835 #xCode
 # mas install 1480933944 #Vimari
@@ -143,9 +148,9 @@ defaults write -g NSWindowShouldDragOnGesture YES
 # sudo defaults write /Library/Preferences/com.apple.airport.bt.plist bluetoothCoexMgmt Hybrid
 
 # Copying and checking out configuration files
-echo "Planting Configuration Files..."
-[ ! -d "$HOME/dotfiles" ] && git clone --bare https://github.com/TomRadford/dotfiles.git $HOME/dotfiles
-git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout master
+# echo "Planting Configuration Files..."
+# [ ! -d "$HOME/dotfiles" ] && git clone --bare https://github.com/TomRadford/dotfiles.git $HOME/dotfiles
+# git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout master
 
 # Installing Fonts
 git clone git@github.com:shaunsingh/SFMono-Nerd-Font-Ligaturized.git /tmp/SFMono_Nerd_Font
@@ -177,7 +182,7 @@ cfg config --local status.showUntrackedFiles no
 # Start Services
 echo "Starting Services (grant permissions)..."
 brew services start skhd
-brew services start fyabai
+brew services start yabai
 brew services start sketchybar
 brew services start borders
 brew services start svim
