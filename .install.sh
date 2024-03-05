@@ -48,7 +48,7 @@ brew install neovim
 # todo: add my zsh setup here (oh-my-zsh) or maybe keep this?
 brew install starship
 brew install zsh-autosuggestions
-# brew install zsh-fast-syntax-highlighting
+brew install zsh-fast-syntax-highlighting
 
 ### Nice to have
 # brew install lulu
