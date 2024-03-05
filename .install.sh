@@ -144,7 +144,7 @@ defaults write -g NSWindowShouldDragOnGesture YES
 
 # Copying and checking out configuration files
 echo "Planting Configuration Files..."
-[ ! -d "$HOME/dotfiles" ] && git clone --bare git@github.com:tomradford/dotfiles.git $HOME/dotfiles
+[ ! -d "$HOME/dotfiles" ] && git clone --bare https://github.com/TomRadford/dotfiles.git $HOME/dotfiles
 git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout master
 
 # Installing Fonts
