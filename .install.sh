@@ -50,9 +50,7 @@ brew install borders
 # brew install starship
 # brew install zsh-autosuggestions
 # brew install zsh-fast-syntax-highlighting
-curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
+brew install powerlevel10k
 ### Nice to have
 # brew install lulu
 brew install btop
@@ -151,6 +149,13 @@ defaults write -g NSWindowShouldDragOnGesture YES
 # echo "Planting Configuration Files..."
 # [ ! -d "$HOME/dotfiles" ] && git clone --bare https://github.com/TomRadford/dotfiles.git $HOME/dotfiles
 # git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout master
+
+echo "Copying Configuration Files..."
+# Copying zshrc and p10k.zsh file from current directory to home:
+cp .zshrc $HOME/.zshrc
+cp .zshrc $HOME/.p10k.zsh
+# Copying .config folder from current directory to home:
+cp -r .config $HOME/.config
 
 # Installing Fonts
 git clone git@github.com:shaunsingh/SFMono-Nerd-Font-Ligaturized.git /tmp/SFMono_Nerd_Font
