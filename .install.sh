@@ -52,10 +52,10 @@ brew install zsh-fast-syntax-highlighting
 ### Nice to have
 # brew install lulu
 brew install btop
-# brew install svimß
+# brew install svim
 brew install lazygit
 # brew install wireguard-go
-brew install dooit
+# brew install dooit
 
 ## Custom HEAD only forks (personal yabai and nnn forks)
 brew install fyabai --head
