@@ -45,6 +45,7 @@ brew install borders
 
 ### Terminal
 brew install neovim
+# todo: add my zsh setup here (oh-my-zsh) or maybe keep this?
 brew install starship
 brew install zsh-autosuggestions
 brew install zsh-fast-syntax-highlighting
@@ -52,7 +53,7 @@ brew install zsh-fast-syntax-highlighting
 ### Nice to have
 # brew install lulu
 brew install btop
-# brew install svim
+brew install svim
 brew install lazygit
 # brew install wireguard-go
 # brew install dooit
@@ -96,7 +97,7 @@ brew install --cask font-fira-code
 # Mac App Store Apps
 echo "Installing Mac App Store Apps..."
 # mas install 1451685025 #Wireguard
-mas install 497799835 #xCode
+# mas install 497799835 #xCode
 # mas install 1480933944 #Vimari
 
 # macOS Settings
@@ -180,7 +181,7 @@ brew services start fyabai
 brew services start sketchybar
 brew services start borders
 brew services start svim
-
+            
 csrutil status
 echo "Do not forget to disable SIP and reconfigure keyboard -> $HOME/.config/keyboard..."
 open "$HOME/.config/keyboard/KeyboardModifierKeySetup.png"
