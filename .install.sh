@@ -19,15 +19,16 @@ brew tap koekeishiya/formulae
 ## Formulae
 echo "Installing Brew Formulae..."
 ### Essentials
-brew install gsl
-brew install llvm
-brew install boost
-brew install libomp
-brew install armadillo
+# brew install gsl
+# brew install llvm
+# brew install boost
+# brew install libomp
+# brew install armadillo
 brew install wget
-brew install jq
+# JQ is a lightweight and flexible command-line JSON processor
+brew install jq 
 brew install ripgrep
-brew install bear
+# brew install bear
 brew install mas
 brew install gh
 brew install ifstat
@@ -37,10 +38,10 @@ brew install sketchybar
 brew install borders
 
 ### Science
-brew install mactex
-brew install hdf5
-brew install gnuplot
-brew install texlab
+# brew install mactex
+# brew install hdf5
+# brew install gnuplot
+# brew install texlab
 
 ### Terminal
 brew install neovim
@@ -49,11 +50,11 @@ brew install zsh-autosuggestions
 brew install zsh-fast-syntax-highlighting
 
 ### Nice to have
-brew install lulu
+# brew install lulu
 brew install btop
-brew install svim
+# brew install svimß
 brew install lazygit
-brew install wireguard-go
+# brew install wireguard-go
 brew install dooit
 
 ## Custom HEAD only forks (personal yabai and nnn forks)
@@ -64,25 +65,26 @@ brew install fnnn --head
 echo "Installing Brew Casks..."
 ### Terminals & Browsers
 brew install --cask alacritty
-brew install --cask kitty
-brew install --cask orion
+# brew install --cask kitty
+# brew install --cask orion
 
 ### Office
-brew install --cask inkscape
-brew install --cask libreoffice
-brew install --cask zoom
+# brew install --cask inkscape
+# brew install --cask libreoffice
+# brew install --cask zoom
 brew install --cask meetingbar
 brew install --cask skim
 brew install --cask vlc
 
 ### Reversing
-brew install --cask machoview
-brew install --cask hex-fiend
-brew install --cask cutter
-brew install --cask sloth
+# brew install --cask machoview
+# brew install --cask hex-fiend
+# brew install --cask cutter
+# brew install --cask sloth
 
 ### Nice to have
-brew install --cask alfred
+# brew install --cask alfred
+brew install --cask raycast
 brew install --cask spotify
 
 ### Fonts
@@ -93,9 +95,9 @@ brew install --cask font-fira-code
 
 # Mac App Store Apps
 echo "Installing Mac App Store Apps..."
-mas install 1451685025 #Wireguard
+# mas install 1451685025 #Wireguard
 mas install 497799835 #xCode
-mas install 1480933944 #Vimari
+# mas install 1480933944 #Vimari
 
 # macOS Settings
 echo "Changing macOS defaults..."
@@ -137,11 +139,11 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write -g NSWindowShouldDragOnGesture YES
 
 ## Fix for MX Master 3S
-sudo defaults write /Library/Preferences/com.apple.airport.bt.plist bluetoothCoexMgmt Hybrid
+# sudo defaults write /Library/Preferences/com.apple.airport.bt.plist bluetoothCoexMgmt Hybrid
 
 # Copying and checking out configuration files
 echo "Planting Configuration Files..."
-[ ! -d "$HOME/dotfiles" ] && git clone --bare git@github.com:FelixKratz/dotfiles.git $HOME/dotfiles
+[ ! -d "$HOME/dotfiles" ] && git clone --bare git@github.com:tomradford/dotfiles.git $HOME/dotfiles
 git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout master
 
 # Installing Fonts
@@ -155,21 +157,21 @@ source $HOME/.zshrc
 cfg config --local status.showUntrackedFiles no
 
 # Python Packages (mainly for data science)
-echo "Installing Python Packages..."
-curl https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh | sh
-source $HOME/.zshrc
-conda install -c apple tensorflow-deps
-conda install -c conda-forge pybind11
-conda install matplotlib
-conda install jupyterlab
-conda install seaborn
-conda install opencv
-conda install joblib
-conda install pytables
-pip install tensorflow-macos
-pip install tensorflow-metal
-pip install debugpy
-pip install sklearn
+# echo "Installing Python Packages..."
+# curl https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh | sh
+# source $HOME/.zshrc
+# conda install -c apple tensorflow-deps
+# conda install -c conda-forge pybind11
+# conda install matplotlib
+# conda install jupyterlab
+# conda install seaborn
+# conda install opencv
+# conda install joblib
+# conda install pytables
+# pip install tensorflow-macos
+# pip install tensorflow-metal
+# pip install debugpy
+# pip install sklearn
 
 # Start Services
 echo "Starting Services (grant permissions)..."
