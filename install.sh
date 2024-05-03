@@ -155,10 +155,10 @@ sudo killall Finder
 
 echo "Copying Configuration Files..."
 # Copying zshrc file from current directory to home:
-cp .zshrc $HOME/.zshrc
+# cp .zshrc $HOME/.zshrc
 # cp .zshrc $HOME/.p10k.zsh
 # Copying .config folder from current directory to home:
-cp -r .config $HOME/.config
+# cp -r .config $HOME/.config
 
 # Installing Fonts
 git clone git@github.com:shaunsingh/SFMono-Nerd-Font-Ligaturized.git /tmp/SFMono_Nerd_Font
@@ -167,7 +167,7 @@ rm -rf /tmp/SFMono_Nerd_Font/
 
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.23/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
-source $HOME/.zshrc
+# source $HOME/.zshrc
 cfg config --local status.showUntrackedFiles no
 
 # Python Packages (mainly for data science)
@@ -190,11 +190,14 @@ cfg config --local status.showUntrackedFiles no
 # Start Services
 echo "Starting Services (grant permissions)..."
 brew services start skhd
-brew services start yabai
+skhd --start-service
+sudo yabai --load-sa
+# REMEMBER TO ADD SUDOER MANUALLY https://github.com/koekeishiya/yabai/issues/787#issuecomment-1918748403
+brew services start fyabai
 brew services start sketchybar
 brew services start borders
 brew services start svim
-            
+   
 csrutil status
 echo "Do not forget to disable SIP and reconfigure keyboard -> $HOME/.config/keyboard..."
 open "$HOME/.config/keyboard/KeyboardModifierKeySetup.png"
