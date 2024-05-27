@@ -193,6 +193,7 @@ brew services start skhd
 skhd --start-service
 sudo yabai --load-sa
 # REMEMBER TO ADD SUDOER MANUALLY https://github.com/koekeishiya/yabai/issues/787#issuecomment-1918748403
+# and also run sudo yabai --load-sa afterwards!
 brew services start fyabai
 brew services start sketchybar
 brew services start borders
