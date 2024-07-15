@@ -18,18 +18,11 @@ brew tap koekeishiya/formulae
 
 ## Formulae
 echo "Installing Brew Formulae..."
-### Essentials
-# brew install gsl
-# brew install llvm
-# brew install boost
-# brew install libomp
-# brew install armadillo
 brew install wget
 # JQ is a lightweight and flexible command-line JSON processor
 brew install jq 
 # ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern
 brew install ripgrep
-# brew install bear
 brew install mas
 brew install gh
 brew install ifstat
@@ -37,71 +30,35 @@ brew install switchaudio-osx
 brew install skhd
 brew install sketchybar
 brew install borders
+brew install fyabai
 
-### Science
-# brew install mactex
-# brew install hdf5
-# brew install gnuplot
-# brew install texlab
+# NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 ### Terminal
 # brew install neovim
 # todo: add my zsh setup here (oh-my-zsh) or maybe keep this?
-# brew install starship
-# brew install zsh-fast-syntax-highlighting
-brew install powerlevel10k
+# brew install powerlevel10k
+brew install autojump
 brew install zsh-autosuggestions
-### Nice to have
-# brew install lulu
 brew install btop
-# brew install svim
 brew install lazygit
-# brew install yabai
-# brew install wireguard-go
-# brew install dooit
-
-## Custom HEAD only forks (personal yabai and nnn forks)
-brew install fyabai --head
-# brew install fnnn --head
 
 ## Casks
 echo "Installing Brew Casks..."
 ### Terminals & Browsers
-brew install --cask alacritty
-# brew install --cask kitty
-# brew install --cask orion
-
-### Office
-# brew install --cask inkscape
-# brew install --cask libreoffice
-# brew install --cask zoom
-# brew install --cask meetingbar
 brew install --cask iterm2
-brew install --cask skim
-brew install --cask vlc
-
-### Reversing
-# brew install --cask machoview
-# brew install --cask hex-fiend
-# brew install --cask cutter
-# brew install --cask sloth
-
-### Nice to have
-# brew install --cask alfred
+brew install --cask arc
+brew install --cask iterm2
 brew install --cask raycast
 brew install --cask spotify
+brew install --cask vlc
 
 ### Fonts
 brew install --cask sf-symbols
 brew install --cask font-hack-nerd-font
 brew install --cask font-jetbrains-mono
 brew install --cask font-fira-code
-
-# Mac App Store Apps
-# echo "Installing Mac App Store Apps..."
-# mas install 1451685025 #Wireguard
-# mas install 497799835 #xCode
-# mas install 1480933944 #Vimari
 
 # macOS Settings
 echo "Changing macOS defaults..."
@@ -145,9 +102,6 @@ defaults write com.apple.finder CreateDesktop false
 
 sudo killall Finder
 
-## Fix for MX Master 3S
-# sudo defaults write /Library/Preferences/com.apple.airport.bt.plist bluetoothCoexMgmt Hybrid
-
 # Copying and checking out configuration files
 # echo "Planting Configuration Files..."
 # [ ! -d "$HOME/dotfiles" ] && git clone --bare https://github.com/TomRadford/dotfiles.git $HOME/dotfiles
@@ -160,6 +114,8 @@ echo "Copying Configuration Files..."
 # Copying .config folder from current directory to home:
 # cp -r .config $HOME/.config
 
+
+
 # Installing Fonts
 git clone git@github.com:shaunsingh/SFMono-Nerd-Font-Ligaturized.git /tmp/SFMono_Nerd_Font
 mv /tmp/SFMono_Nerd_Font/* $HOME/Library/Fonts
@@ -167,34 +123,14 @@ rm -rf /tmp/SFMono_Nerd_Font/
 
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.23/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
-# source $HOME/.zshrc
-cfg config --local status.showUntrackedFiles no
 
-# Python Packages (mainly for data science)
-# echo "Installing Python Packages..."
-# curl https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh | sh
-# source $HOME/.zshrc
-# conda install -c apple tensorflow-deps
-# conda install -c conda-forge pybind11
-# conda install matplotlib
-# conda install jupyterlab
-# conda install seaborn
-# conda install opencv
-# conda install joblib
-# conda install pytables
-# pip install tensorflow-macos
-# pip install tensorflow-metal
-# pip install debugpy
-# pip install sklearn
 
 # Start Services
 echo "Starting Services (grant permissions)..."
 brew services start skhd
 skhd --start-service
 sudo yabai --load-sa
-# REMEMBER TO ADD SUDOER MANUALLY https://github.com/koekeishiya/yabai/issues/787#issuecomment-1918748403
-# and also run sudo yabai --load-sa afterwards!
-brew services start fyabai
+brew services start yabai
 brew services start sketchybar
 brew services start borders
 brew services start svim
@@ -202,5 +138,7 @@ brew services start svim
 csrutil status
 echo "Do not forget to disable SIP and reconfigure keyboard -> $HOME/.config/keyboard..."
 open "$HOME/.config/keyboard/KeyboardModifierKeySetup.png"
+# REMEMBER TO ADD SUDOER MANUALLY https://github.com/koekeishiya/yabai/issues/787#issuecomment-1918748403
+# and also run sudo yabai --load-sa afterwards!
 echo "Add sudoer manually:\n '$(whoami) ALL = (root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | awk "{print \$1;}") $(which yabai) --load-sa' to '/private/etc/sudoers.d/yabai'"
 echo "Installation complete...\n"
