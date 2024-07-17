@@ -19,8 +19,6 @@ brew tap koekeishiya/formulae
 ## Formulae
 echo "Installing Brew Formulae..."
 brew install wget
-# JQ is a lightweight and flexible command-line JSON processor
-brew install jq 
 # ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern
 brew install ripgrep
 brew install mas
@@ -49,7 +47,6 @@ echo "Installing Brew Casks..."
 ### Terminals & Browsers
 brew install --cask iterm2
 brew install --cask arc
-brew install --cask iterm2
 brew install --cask raycast
 brew install --cask spotify
 brew install --cask vlc
@@ -107,7 +104,7 @@ sudo killall Finder
 # [ ! -d "$HOME/dotfiles" ] && git clone --bare https://github.com/TomRadford/dotfiles.git $HOME/dotfiles
 # git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout master
 
-echo "Copying Configuration Files..."
+# echo "Copying Configuration Files..." 
 # Copying zshrc file from current directory to home:
 # cp .zshrc $HOME/.zshrc
 # cp .zshrc $HOME/.p10k.zsh
