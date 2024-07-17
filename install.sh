@@ -28,7 +28,7 @@ brew install switchaudio-osx
 brew install skhd
 brew install sketchybar
 brew install borders
-brew install fyabai
+brew install yabai
 
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -47,6 +47,7 @@ echo "Installing Brew Casks..."
 ### Terminals & Browsers
 brew install --cask iterm2
 brew install --cask arc
+brew install --cask iterm2
 brew install --cask raycast
 brew install --cask spotify
 brew install --cask vlc
@@ -127,6 +128,7 @@ echo "Starting Services (grant permissions)..."
 brew services start skhd
 skhd --start-service
 sudo yabai --load-sa
+yabai --start-service
 brew services start yabai
 brew services start sketchybar
 brew services start borders
