@@ -29,6 +29,7 @@ brew install skhd
 brew install sketchybar
 brew install borders
 brew install yabai
+brew install jq
 
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
