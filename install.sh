@@ -109,7 +109,7 @@ sudo killall Finder
 # cp .zshrc $HOME/.zshrc
 # cp .zshrc $HOME/.p10k.zsh
 # Copying .config folder from current directory to home:
-cp -r .config $HOME/.config
+cp -r .config $HOME
 
 # Installing Fonts
 git clone git@github.com:shaunsingh/SFMono-Nerd-Font-Ligaturized.git /tmp/SFMono_Nerd_Font
