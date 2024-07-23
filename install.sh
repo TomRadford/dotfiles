@@ -60,6 +60,7 @@ brew install --cask font-fira-code
 
 # Obligatory
 brew install --cask git-credential-manager
+brew install --cask google-drive
 
 # macOS Settings
 echo "Changing macOS defaults..."
