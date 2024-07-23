@@ -48,7 +48,6 @@ echo "Installing Brew Casks..."
 ### Terminals & Browsers
 brew install --cask iterm2
 brew install --cask arc
-brew install --cask iterm2
 brew install --cask raycast
 brew install --cask spotify
 brew install --cask vlc
