@@ -43,6 +43,7 @@ brew install zsh-autosuggestions
 brew install btop
 brew install lazygit
 
+
 ## Casks
 echo "Installing Brew Casks..."
 ### Terminals & Browsers
@@ -57,6 +58,9 @@ brew install --cask sf-symbols
 brew install --cask font-hack-nerd-font
 brew install --cask font-jetbrains-mono
 brew install --cask font-fira-code
+
+# Obligatory
+brew install --cask git-credential-manager
 
 # macOS Settings
 echo "Changing macOS defaults..."
