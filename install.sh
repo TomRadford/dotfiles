@@ -104,19 +104,13 @@ defaults write com.apple.finder CreateDesktop false
 
 sudo killall Finder
 
-# Copying and checking out configuration files
-# echo "Planting Configuration Files..."
-# [ ! -d "$HOME/dotfiles" ] && git clone --bare https://github.com/TomRadford/dotfiles.git $HOME/dotfiles
-# git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout master
-
 # echo "Copying Configuration Files..." 
 # Copying zshrc file from current directory to home:
+# ToDo copy add my .zshrc / p10k config to this repo
 # cp .zshrc $HOME/.zshrc
 # cp .zshrc $HOME/.p10k.zsh
 # Copying .config folder from current directory to home:
-# cp -r .config $HOME/.config
-
-
+cp -r .config $HOME/.config
 
 # Installing Fonts
 git clone git@github.com:shaunsingh/SFMono-Nerd-Font-Ligaturized.git /tmp/SFMono_Nerd_Font
