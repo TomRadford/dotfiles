@@ -36,9 +36,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ### Terminal
 # brew install neovim
 # todo: add my zsh setup here (oh-my-zsh) or maybe keep this?
-# brew install powerlevel10k
+# brew install powerlevel10k --> install me manually
+# brew install zsh-autocomplete --> install me manually too
 brew install autojump
-brew install zsh-autosuggestions
 brew install btop
 brew install lazygit
 
