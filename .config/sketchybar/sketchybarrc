@@ -2,6 +2,8 @@
 
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 source "$CONFIG_DIR/icons.sh" # Loads all defined icons
+source "$CONFIG_DIR/icon_map.sh" # Loads icon map
+
 
 ITEM_DIR="$CONFIG_DIR/items" # Directory where the items are configured
 PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are stored
