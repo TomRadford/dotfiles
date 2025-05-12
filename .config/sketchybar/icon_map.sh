@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-case $@ in
+
+### START-OF-ICON-MAP
+function __icon_map() {
+    case "$1" in
    "Live")
         icon_result=":ableton:"
         ;;
@@ -748,4 +751,5 @@ case $@ in
         icon_result=":default:"
         ;;
     esac
-echo $icon_result
+}
+### END-OF-ICON-MAP
