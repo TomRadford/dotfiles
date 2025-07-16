@@ -27,8 +27,12 @@ brew install switchaudio-osx
 brew install skhd
 brew install sketchybar
 brew install borders
-brew install yabai
 brew install jq
+
+#  Window Manager
+brew install --cask nikitabobko/tap/aerospace 
+cp .aerospace.toml $HOME/.aerospace.toml # handles its own autostart
+brew install aerospace
 
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -98,9 +102,10 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write -g NSWindowShouldDragOnGesture YES
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.finder CreateDesktop false
+defaults write com.apple.spaces spans-displays -bool true && killall SystemUIServer # DISABLES Displays have separate Spaces
 
 sudo killall Finder
 
@@ -112,6 +117,7 @@ sudo killall Finder
 # Copying .config folder from current directory to home:
 cp -r .config $HOME
 
+
 # Installing Fonts
 git clone git@github.com:shaunsingh/SFMono-Nerd-Font-Ligaturized.git /tmp/SFMono_Nerd_Font
 mv /tmp/SFMono_Nerd_Font/* $HOME/Library/Fonts
@@ -120,22 +126,15 @@ rm -rf /tmp/SFMono_Nerd_Font/
 # curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.23/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 brew install --cask font-sketchybar-app-font  
 
-
 # Start Services
 echo "Starting Services (grant permissions)..."
 brew services start skhd
 skhd --start-service
-sudo yabai --load-sa
-yabai --start-service
-brew services start yabai
+
+
 brew services start sketchybar
 brew services start borders
 brew services start svim
    
 csrutil status
-echo "Do not forget to disable SIP and reconfigure keyboard -> $HOME/.config/keyboard..."
-open "$HOME/.config/keyboard/KeyboardModifierKeySetup.png"
-# REMEMBER TO ADD SUDOER MANUALLY https://github.com/koekeishiya/yabai/issues/787#issuecomment-1918748403
-# and also run sudo yabai --load-sa afterwards!
-echo "Add sudoer manually:\n '$(whoami) ALL = (root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | awk "{print \$1;}") $(which yabai) --load-sa' to '/private/etc/sudoers.d/yabai'"
 echo "Installation complete...\n"
