@@ -38,14 +38,10 @@ brew install aerospace
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 ### Terminal
-# brew install neovim
-# todo: add my zsh setup here (oh-my-zsh) or maybe keep this?
-# brew install powerlevel10k --> install me manually
-# brew install zsh-autocomplete --> install me manually too
-brew install autojump
+brew install zsh-autocomplete
 brew install btop
 brew install lazygit
-
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ## Casks
 echo "Installing Brew Casks..."
@@ -56,6 +52,7 @@ brew install --cask raycast
 brew install --cask spotify
 brew install --cask vlc
 brew install --cask cursor
+brew install --cask bitwarden
 
 ### Fonts
 brew install --cask sf-symbols
@@ -112,11 +109,10 @@ defaults write com.apple.spaces spans-displays -bool true && killall SystemUISer
 sudo killall Finder
 
 # echo "Copying Configuration Files..." 
-# Copying zshrc file from current directory to home:
-# ToDo copy add my .zshrc / p10k config to this repo
-# cp .zshrc $HOME/.zshrc
-# cp .zshrc $HOME/.p10k.zsh
-# Copying .config folder from current directory to home:
+brew install powerlevel10k
+cp .zshrc $HOME/.zshrc
+cp .p10k.zsh $HOME/.p10k.zsh
+cp com.googlecode.iterm2.plist $HOME/Library/Preferences/com.googlecode.iterm2.plist
 cp -r .config $HOME
 
 
