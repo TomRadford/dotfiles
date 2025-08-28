@@ -151,9 +151,4 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 # bun completions
 [ -s "/Users/tom/.bun/_bun" ] && source "/Users/tom/.bun/_bun"
 
-# fnm
-FNM_PATH="/Users/tom/Library/Application Support/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/Users/tom/Library/Application Support/fnm:$PATH"
-  eval "`fnm env`"
-fi
+
