@@ -110,8 +110,8 @@ defaults write com.apple.spaces spans-displays -bool true && killall SystemUISer
 sudo killall Finder
 
 # echo "Copying Configuration Files..." 
-brew install powerlevel10k
-# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+# brew install powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 cp .zshrc $HOME/.zshrc
 cp .p10k.zsh $HOME/.p10k.zsh
 cp com.googlecode.iterm2.plist $HOME/Library/Preferences/com.googlecode.iterm2.plist
