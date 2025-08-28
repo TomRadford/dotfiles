@@ -144,7 +144,7 @@ esac
 # Created by `pipx` on 2024-09-21 06:53:57
 export PATH="$PATH:/Users/tom/.local/bin"
 
-source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
